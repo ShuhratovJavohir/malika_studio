@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fancy-border {
+  border: 5px solid #6a1b9a; /* Фиолетовая рамка */
+  border-radius: 15px; /* Закругленные углы */
+  padding: 20px; /* Внутренние отступы */
+  background: linear-gradient(145deg, #ffffff, #e0e0e0); /* Градиентный фон */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Тень для создания объема */
+  position: relative;
+  overflow: hidden;
+}
+
+.fancy-border::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px dashed rgba(106, 27, 154, 0.5); /* Пунктирная внутренняя рамка */
+  border-radius: 20px;
+  pointer-events: none;
+}

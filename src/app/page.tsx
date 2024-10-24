@@ -13,9 +13,7 @@ export default function RootPage() {
             <div
                 className='min-h-screen flex justify-center items-center root-bg p-4 z-20 relative'
             >
-                {/* Content */}
                 <div className='w-full max-w-[450px] h-auto text-center flex flex-col gap-5'>
-                    {/* Logo */}
                     <span className='font-bold text-3xl mx-auto mb-3 w-1/2 text-[rgb(235,159,255)]'>
                     <Image src={Logo} alt="Logo Malika Studio"/>
                 </span>

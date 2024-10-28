@@ -1,12 +1,12 @@
-'use client';
+'use client'
 
-import { useEffect, useState } from 'react';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import PhoneIcon from '@mui/icons-material/Phone';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import Image from 'next/image';
 import Logo from '@/assets/images/logo.png';
 import BgFon from '@/assets/images/beautiful-feathers-arrangement.jpg';
+import { useEffect, useState } from 'react';
 
 export default function RootPage() {
     const [tiltStyle, setTiltStyle] = useState({ transform: 'translate(0px, 0px)' });
@@ -14,9 +14,10 @@ export default function RootPage() {
     useEffect(() => {
         // Обработчик наклона устройства
         const handleOrientation = (event: DeviceOrientationEvent) => {
-            const { gamma = 0, beta = 0 } = event; // gamma - горизонтальный наклон, beta - вертикальный наклон
+            const gamma = event.gamma ?? 0; // gamma - горизонтальный наклон, значение по умолчанию 0
+            const beta = event.beta ?? 0;   // beta - вертикальный наклон, значение по умолчанию 0
 
-            // Настраиваем силу параллакса
+            // Коэффициенты для регулировки силы параллакса
             const offsetX = gamma * -2; // Поворот по горизонтали
             const offsetY = beta * -2; // Поворот по вертикали
 
@@ -25,7 +26,7 @@ export default function RootPage() {
             });
         };
 
-        // Добавляем слушатель для `deviceorientation`
+        // Добавляем слушатель для deviceorientation
         window.addEventListener('deviceorientation', handleOrientation);
 
         // Убираем слушатель при размонтировании компонента
@@ -41,7 +42,7 @@ export default function RootPage() {
                 src={BgFon}
                 alt="This is BG"
                 className="absolute inset-0 h-full w-full object-cover z-0 transition-transform duration-500"
-                style={tiltStyle} // Применение стиля с параллакс-эффектом
+                style={tiltStyle}
             />
 
             {/* Темный overlay поверх фонового изображения */}
@@ -105,8 +106,8 @@ export default function RootPage() {
                 </ul>
 
                 {/* Элемент "Created by", прикрепленный к нижней части контейнера */}
-                <div className="flex justify-center mt-5">
-          <span className="text-white font-medium">
+                <div className="flex justify-center">
+          <span className="text-white font-medium mt-8">
             Created by <a href="https://t.me/ShukhratovJ">@ShukhratovJ</a>
           </span>
                 </div>

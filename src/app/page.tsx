@@ -65,6 +65,11 @@ export default function RootPage() {
                             </a>
                         </li>
                     </ul>
+                    <div className="flex justify-center">
+                        <span className="text-white font-medium absolute bottom-10">
+                            Created by <a href="https://t.me/ShukhratovJ">@ShukhratovJ</a>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>

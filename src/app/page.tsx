@@ -79,7 +79,7 @@ export default function RootPage() {
                     >
                         <a
                             className="py-4 text-white text-[20px] md:text-[22px] flex items-center justify-center gap-2"
-                            href="https://t.me/Shopmalikaa"
+                            href="https://t.me/Xina_by_malika_admin"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
